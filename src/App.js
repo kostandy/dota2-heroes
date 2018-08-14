@@ -54,7 +54,7 @@ class App extends Component {
 		const heroRoles = 'hero-roles';
 
 		if (error) {
-			return <div>Error: {error.message}</div>;
+			return <pre>Error: {error.message}</pre>;
 		} else if (!isLoaded) {
 			return <div>Loading...</div>;
 		} else {
@@ -68,15 +68,29 @@ class App extends Component {
 
 						<Grid className={heroes}>
 
-							{items.map((item, i) => (
+							{items.map((item, itemIndex) => (
 
-								<Row className={hero} key={i}>
+								<Row className={hero} key={itemIndex}>
 
-									<Col xs={6} md={2}>
+									<Col xs={2}>
 										<div className={heroPreview}>
-											<img src={images[i]} alt={item.localized_name} width="100%" height="auto" />
+											<img src={images[itemIndex]} alt={item.localized_name} width="100%" height="auto" />
 											<p className={heroName}>{item.localized_name}</p>
 										</div>
+									</Col>
+
+									<Col xs={4}>
+										<b>Roles:</b>
+										<br />
+										<Row middle="xs">
+											{
+												item.roles.map((role, roleIndex) => (
+													<Col xs key={roleIndex}>
+														{role}
+													</Col>
+												))
+											}
+										</Row>
 									</Col>
 
 								</Row>
