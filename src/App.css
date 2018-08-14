@@ -1,0 +1,65 @@
+body {
+	font-family: sans-serif;
+	color: #fff;
+	background: fixed url("./background.jpg") no-repeat center;
+	background-size: cover;
+	/*background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));*/
+}
+
+nav {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: url("./stone-background.jpg") repeat-x center;
+	box-shadow: 0 0 5px rgba(0,0,0,.84);
+	margin-bottom: 50px;
+	z-index: 99999;
+}
+
+main {
+	margin-top: 154px;
+}
+
+ul.heroes {
+	background-color: rgba(0,0,0, .64);
+	width: 80%;
+	margin: 0 auto 25px auto;
+}
+
+ul.heroes > li {
+	display: block;
+	position: relative;
+	padding: 25px;
+	width: 100%;
+}
+
+ul.heroes > li:not(:last-child) {
+	border-bottom: 1px solid rgba(255,255,255,.44);
+}
+
+ul.heroes > li img {
+	position: relative;
+	vertical-align: middle;
+	box-shadow: 0 0 10px 3px rgba(255, 255, 255, .24);
+}
+
+.hero-preview {
+	display: inline-block;
+	height: 136px;
+	line-height: 136px;
+	width: 240px;
+	outline: 3px solid #fff;
+}
+
+.hero-name {
+	position: absolute;
+	bottom: 24px;
+	width: inherit;
+	height: 36px;
+	line-height: 36px;
+	background-color: rgba(0,0,0,.64);
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
