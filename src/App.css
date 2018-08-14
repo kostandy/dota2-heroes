@@ -3,7 +3,6 @@ body {
 	color: #fff;
 	background: fixed url("./background.jpg") no-repeat center;
 	background-size: cover;
-	/*background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));*/
 }
 
 nav {
@@ -21,41 +20,32 @@ main {
 	margin-top: 154px;
 }
 
-ul.heroes {
+.heroes {
 	background-color: rgba(0,0,0, .64);
 	width: 80%;
 	margin: 0 auto 25px auto;
 }
 
-ul.heroes > li {
-	display: block;
+.hero {
 	position: relative;
 	padding: 25px;
-	width: 100%;
 }
 
 ul.heroes > li:not(:last-child) {
 	border-bottom: 1px solid rgba(255,255,255,.44);
 }
 
-ul.heroes > li img {
-	position: relative;
-	vertical-align: middle;
-	box-shadow: 0 0 10px 3px rgba(255, 255, 255, .24);
-}
-
 .hero-preview {
-	display: inline-block;
-	height: 136px;
-	line-height: 136px;
-	width: 240px;
+	position: relative;
+	text-align: center;
+	height: 130px;
 	outline: 3px solid #fff;
 }
 
 .hero-name {
 	position: absolute;
-	bottom: 24px;
-	width: inherit;
+	bottom: 0;
+	width: 100%;
 	height: 36px;
 	line-height: 36px;
 	background-color: rgba(0,0,0,.64);

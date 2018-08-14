@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './navbar';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import './App.css';
 
 const importAllHeroImages = r => r.keys().map(r);
@@ -47,6 +48,7 @@ class App extends Component {
 		const { error, isLoaded, items } = this.state;
 
 		const heroes = 'heroes';
+		const hero = 'hero';
 		const heroPreview = 'hero-preview';
 		const heroName = 'hero-name'
 		const heroRoles = 'hero-roles';
@@ -63,21 +65,26 @@ class App extends Component {
 					<Navbar />
 
 					<main>
-						<ul className={heroes}>
+
+						<Grid className={heroes}>
+
 							{items.map((item, i) => (
-								<li key={item.id}>
-									<div className={heroPreview}>
-										<img src={images[i]} alt={item.localized_name} width={240} height={136} />
-										<p className={heroName}>{item.localized_name}</p>
-									</div>
-									<div className={heroRoles}>
-										<ul>
-											{item.roles.map((role, i) => ( <li key={i}>{role}</li> )) }
-										</ul>
-									</div>
-								</li>
+
+								<Row className={hero} key={i}>
+
+									<Col xs={6} md={2}>
+										<div className={heroPreview}>
+											<img src={images[i]} alt={item.localized_name} width="100%" height="auto" />
+											<p className={heroName}>{item.localized_name}</p>
+										</div>
+									</Col>
+
+								</Row>
+
 							))}
-						</ul>
+
+						</Grid>
+
 					</main>
 
 				</div>
