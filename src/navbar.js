@@ -6,7 +6,7 @@ class Navbar extends Component {
 
 	render() {
 		return <nav>
-			<img src={logo} alt="Dota 2" width="100px" height="auto" />
+			<img src={logo} alt="Dota 2" width="75px" height="auto" />
 		</nav>
 	}
 
