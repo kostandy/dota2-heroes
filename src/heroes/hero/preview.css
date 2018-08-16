@@ -1,0 +1,18 @@
+.hero-preview {
+	position: relative;
+	outline: 3px solid #fff;
+	width: auto;
+}
+
+.hero-name {
+	color: #ffffff;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	background-color: rgba(0,0,0,.64);
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
