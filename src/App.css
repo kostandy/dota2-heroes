@@ -1,8 +1,8 @@
 body {
 	font-family: sans-serif;
-	color: #fff;
 	background: fixed url("./background.jpg") no-repeat center;
 	background-size: cover;
+	padding-top: 125px;
 }
 
 nav {
@@ -11,17 +11,15 @@ nav {
 	top: 0;
 	width: 100%;
 	background: url("./stone-background.jpg") repeat-x center;
-	box-shadow: 0 0 5px rgba(0,0,0,.84);
+	box-shadow: 0 0 5px 5px rgba(0,0,0,.64);
 	margin-bottom: 50px;
 	z-index: 99999;
 }
 
-main {
-	margin-top: 154px;
-}
-
 .heroes {
-	background-color: rgba(0,0,0, .64);
+	background-color: rgba(0,0,0, .84);
+	box-shadow: 0 0 100px 5px rgba(0,0,0,.74);
+	border: 1px solid rgba(255,255,255,.44);
 	width: 80%;
 	margin: 0 auto 25px auto;
 }
@@ -43,6 +41,7 @@ ul.heroes > li:not(:last-child) {
 }
 
 .hero-name {
+	color: #ffffff;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
