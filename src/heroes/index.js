@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Hero from './hero'
 
-import { Grid } from 'react-flexbox-grid'
+import { Item } from 'semantic-ui-react'
 
 import './index.css'
 
@@ -19,13 +19,11 @@ export default class Heroes extends Component {
 
 		const { heroes } = this.state
 
-		const heroesClass = 'heroes'
-
-		return <Grid className={heroesClass}>
+		return <Item.Group relaxed>
 
 			{heroes.map((hero, i) => <Hero data={hero} key={i} />)}
 
-		</Grid>
+		</Item.Group>
 	}
 
 }

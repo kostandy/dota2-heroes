@@ -1,6 +1,11 @@
 body {
 	font-family: sans-serif;
-	background: fixed url("./background.jpg") no-repeat center;
+	background: fixed url("./background.jpg") no-repeat;
 	background-size: cover;
 	padding-top: 125px;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
 }

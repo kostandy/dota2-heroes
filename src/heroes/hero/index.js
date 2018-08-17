@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 
-import Preview from './preview'
 import Statistic from './statistic'
-import Roles from './roles'
+// import Roles from './roles'
 
-import { Col, Row } from 'react-flexbox-grid'
-import { Button } from 'semantic-ui-react'
+import { Button, Item } from 'semantic-ui-react'
 
 export default class hero extends Component {
 
@@ -17,44 +15,34 @@ export default class hero extends Component {
 	}
 
 	getStatisticData(hero) {
-		Object.keys(hero).map(key =>
-			key.indexOf('_pick') && hero[key])
+		return Object.keys(hero).filter(key => key.match(/\d_pick/)).map((key, i) => ({y: hero[key], x: i}))
 	}
 
 	render () {
 
 		const { hero } = this.state
 
-		const heroClass = 'hero'
+		return <Item>
 
-		return (
+				<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
 
-			<Row className={heroClass} key={hero.id} middle="xs">
+				<Item.Content verticalAlign='middle'>
 
-				<Col xs={2}>
+					<Item.Header>{hero.localized_name}</Item.Header>
 
-					<Preview src={hero.img} description={hero.localized_name} />
+					<Item.Description>
 
-				</Col>
+						<Statistic data={this.getStatisticData(hero)} />
 
-				<Col xs>
+					</Item.Description>
 
-					<Statistic data={this.getStatisticData(hero)} />
+					<Item.Extra>
+						<Button floated='right'>More</Button>
+					</Item.Extra>
 
-				</Col>
+				</Item.Content>
 
-				<Col xs>
-
-					<Roles data={hero.roles}/>
-
-				</Col>
-
-				<Col>
-					<Button>Details</Button>
-				</Col>
-
-			</Row>
-		)
+			</Item>
 	}
 
 }

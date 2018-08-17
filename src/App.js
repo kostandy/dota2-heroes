@@ -4,13 +4,14 @@ import React, { Component } from 'react'
 // Components
 import Navbar from './navbar/navbar'
 import Heroes from './heroes/index'
+import Loader from './common/loader/index'
 
 // Styles
 import './App.css'
 
 class App extends Component {
 
-	constructor(props) {
+	constructor (props) {
 		super(props)
 		this.state = {
 			error: null,
@@ -19,7 +20,7 @@ class App extends Component {
 		}
 	}
 
-	async componentDidMount() {
+	async componentDidMount () {
 
 		try {
 
@@ -31,7 +32,7 @@ class App extends Component {
 				isLoaded: true,
 				items: data.sort((a, b) => {
 					var keyA = a.localized_name,
-							keyB = b.localized_name
+						keyB = b.localized_name
 					if (keyA < keyB) return -1
 					if (keyA > keyB) return 1
 					return 0
@@ -45,29 +46,23 @@ class App extends Component {
 		}
 	}
 
-	render() {
-		const { error, isLoaded, items } = this.state
+	render () {
+		const {error, isLoaded, items} = this.state
 
-		if (error) {
+		return error ? console.error(error) : <div>
 
-			return <pre>Error: {error.message}</pre>
+			<Navbar/>
 
-		} else if (!isLoaded) {
+			<main>
 
-			return <div>Loading...</div>
+				{isLoaded && <Heroes data={items} /> }
 
-		} else {
+				{!isLoaded && <Loader/>}
 
-			return (
-				<div>
-					<Navbar />
-					<main>
-						<Heroes data={items} />
-					</main>
-				</div>
-			)
+			</main>
 
-		}
+		</div>
+
 	}
 }
 
