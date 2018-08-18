@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 import Statistic from './statistic'
+import Stats from './stats'
 // import Roles from './roles'
+
+import './index.css'
 
 import { Button, Item } from 'semantic-ui-react'
 
@@ -22,7 +25,11 @@ export default class hero extends Component {
 
 		const { hero } = this.state
 
-		return <Item>
+		const statisticData = this.getStatisticData(hero)
+
+		const classHero = 'hero'
+
+		return <Item className={classHero}>
 
 				<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
 
@@ -32,7 +39,9 @@ export default class hero extends Component {
 
 					<Item.Description>
 
-						<Statistic data={this.getStatisticData(hero)} />
+						<Stats primary={hero.primary_attr} />
+
+						<Statistic data={statisticData} />
 
 					</Item.Description>
 

@@ -1,0 +1,13 @@
+.ui.items>.item.hero {
+	background-color: rgba(255,255,255,.24);
+	padding: 15px;
+}
+
+.ui.items>.item.hero .extra > button {
+	margin: 0;
+}
+
+.hero img {
+	position: absolute;
+	top: calc(50% - 42.19px)
+}
