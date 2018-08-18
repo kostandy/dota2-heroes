@@ -7,9 +7,5 @@ body {
 
 main {
 	width: 80%;
-	background-color: rgba(0,0,0, .84);
-	box-shadow: 0 0 100px 5px rgba(0,0,0,.74);
-	border: 1px solid rgba(255,255,255,.44);
 	margin: 0 auto 25px auto;
-	padding: 25px
 }

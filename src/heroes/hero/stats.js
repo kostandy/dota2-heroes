@@ -6,6 +6,8 @@ import agi from './attributes/agility.png'
 import str from './attributes/strenght.png'
 import int from './attributes/intelligence.png'
 
+import './stats.css'
+
 export default class stats extends Component {
 
 	constructor (props) {
@@ -23,11 +25,13 @@ export default class stats extends Component {
 
 		const url = this.getAttrIcon(primaryAttr)
 
+		const classAttrIcon = 'attr-icon'
+
 		// TODO: Add more stats
 
 		return <div>
 
-			<Image src={url} alt={primaryAttr} size="mini"/>
+			<Image className={classAttrIcon} src={url} alt={primaryAttr}/>
 
 		</div>
 	}

@@ -48,7 +48,7 @@ export default class statistic extends Component {
 			</Statistic.Value>
 
 			<Statistic.Label>
-				Pick's
+				Queue of pick
 			</Statistic.Label>
 
 		</Statistic>

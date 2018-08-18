@@ -1,5 +1,6 @@
 .ui.items>.item.hero {
-	background-color: rgba(255,255,255,.24);
+	background-color: rgba(0,0,0, .84);
+	box-shadow: 0 0 100px 5px rgba(0,0,0,.74);
 	padding: 15px;
 }
 
@@ -7,7 +8,15 @@
 	margin: 0;
 }
 
-.hero img {
-	position: absolute;
-	top: calc(50% - 42.19px)
+.ui.items>.item.hero .ui.small.image {
+	width: auto;
+}
+
+.hero-name {
+	background-color: rgba(0,0,0,.64);
+	position: relative;
+	top: -19px;
+	font-size: 14pt;
+	color: #fff;
+	text-align: center;
 }

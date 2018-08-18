@@ -28,26 +28,29 @@ export default class hero extends Component {
 		const statisticData = this.getStatisticData(hero)
 
 		const classHero = 'hero'
+		const classHeroName = 'hero-name'
 
 		return <Item className={classHero}>
 
-				<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
+				<Item.Image>
+
+					<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
+
+					<div className={classHeroName}>{hero.localized_name}</div>
+
+					<Stats primary={hero.primary_attr} />
+
+				</Item.Image>
 
 				<Item.Content verticalAlign='middle'>
 
-					<Item.Header>{hero.localized_name}</Item.Header>
-
 					<Item.Description>
-
-						<Stats primary={hero.primary_attr} />
 
 						<Statistic data={statisticData} />
 
-					</Item.Description>
-
-					<Item.Extra>
 						<Button floated='right'>More</Button>
-					</Item.Extra>
+
+					</Item.Description>
 
 				</Item.Content>
 
