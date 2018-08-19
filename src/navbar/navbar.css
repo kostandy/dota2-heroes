@@ -9,3 +9,7 @@ nav {
 	z-index: 99999;
 	text-align: center;
 }
+
+nav .logo {
+	margin: 5px;
+}
