@@ -1,0 +1,20 @@
+.hero .value {
+	margin-left: -20px;
+	margin-top: -8px;
+}
+
+.hero .label {
+	margin-top: -2px;
+}
+
+.hero .rv-hint {
+	background-color: rgba(0,0,0,.84);
+	padding-bottom: 15px;
+	width: 200px;
+	font-size: 10pt;
+	z-index: 1;
+}
+
+.hero .rv-hint p {
+	margin-bottom: 0;
+}

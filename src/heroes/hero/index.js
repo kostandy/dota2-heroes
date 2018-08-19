@@ -18,7 +18,13 @@ export default class hero extends Component {
 	}
 
 	getStatisticData(hero) {
-		return Object.keys(hero).filter(key => key.match(/\d_pick/)).map((key, i) => ({y: hero[key], x: i}))
+		return Object.keys(hero)
+		.filter(key => key.match(new RegExp(`\\d_pick`)))
+		.map((key, i) => ({
+			y: hero[key],
+			x: i,
+			winrate: hero[key.replace('_pick', '_win')]
+		}))
 	}
 
 	render () {
@@ -38,17 +44,17 @@ export default class hero extends Component {
 
 					<div className={classHeroName}>{hero.localized_name}</div>
 
-					<Stats primary={hero.primary_attr} />
+					<Stats data={hero} />
 
 				</Item.Image>
 
-				<Item.Content verticalAlign='middle'>
+				<Item.Content>
 
 					<Item.Description>
 
 						<Statistic data={statisticData} />
 
-						<Button floated='right'>More</Button>
+						<Button disabled floated='right'>More</Button>
 
 					</Item.Description>
 

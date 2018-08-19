@@ -1,4 +1,16 @@
-.attr-icon {
+.hero .attr-icon {
 	width: 25px;
 	height: auto;
+}
+
+.hero .item {
+	color: #fff;
+}
+
+.hero .attr-icon.primary {
+	outline: 1px solid gold;
+}
+
+.hero .list {
+	margin: 0;
 }

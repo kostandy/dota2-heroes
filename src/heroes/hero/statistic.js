@@ -4,6 +4,7 @@ import { Statistic } from 'semantic-ui-react'
 import { Hint, LineMarkSeries, XYPlot } from 'react-vis/es/index'
 
 import 'react-vis/dist/style.css'
+import './statistic.css'
 
 export default class statistic extends Component {
 
@@ -31,18 +32,25 @@ export default class statistic extends Component {
 
 		const { data, value } = this.state
 
+		const classHint = 'hint'
+
 		return <Statistic inverted>
 
 			<Statistic.Value>
 
 				<XYPlot
-					width={250}
-					height={100}>
+					width={175}
+					height={80}>
 					<LineMarkSeries
 						onValueMouseOver={this._rememberValue}
 						onValueMouseOut={this._forgetValue}
 						data={data}/>
-					{value ? <Hint value={value}/> : null}
+					{value ? <Hint value={value} className={classHint} align={{horizontal: 'auto', vertical: 'bottom'}}>
+						<b>{value.x + 1} Pick</b>
+						<p>{value.y} times</p>
+						<b>Winrate by position</b>
+						<p>{Number(value.winrate / value.y * 100).toFixed(2)} %</p>
+					</Hint> : null}
 				</XYPlot>
 
 			</Statistic.Value>
