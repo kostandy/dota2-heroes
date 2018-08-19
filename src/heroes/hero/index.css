@@ -1,6 +1,6 @@
 .ui.items>.item.hero {
 	background-color: rgba(0,0,0, .84);
-	box-shadow: 0 0 100px 5px rgba(0,0,0,.74);
+	box-shadow: 0 0 50px 5px rgba(0,0,0,.74);
 	padding: 15px;
 }
 

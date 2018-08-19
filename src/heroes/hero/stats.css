@@ -8,7 +8,8 @@
 }
 
 .hero .attr-icon.primary {
-	outline: 1px solid gold;
+	border: 1px solid gold;
+	border-radius: 50%;
 }
 
 .hero .list {

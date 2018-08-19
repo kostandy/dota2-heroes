@@ -31,7 +31,9 @@ export default class stats extends Component {
 		return <List verticalAlign='middle'>
 
 			<List.Item>
-				<Image className={`${classAttrIcon} ${getPrimaryClassName(hero.primary_attr, 'str')}`} src={str} alt="Base strength"/>
+				<Image
+					className={`${classAttrIcon} ${getPrimaryClassName(hero.primary_attr, 'str')}`}
+					src={str} alt="Base strength"/>
 				<List.Content>{hero.base_str}</List.Content>
 			</List.Item>
 
