@@ -3,7 +3,7 @@
 	height: auto;
 }
 
-.hero .item {
+.hero .ui.list .item {
 	color: #fff;
 }
 
@@ -13,5 +13,21 @@
 }
 
 .hero .list {
+	margin: 0;
+}
+
+.hero .ui.list .item .header {
+	color: rgba(255,255,255,.84);
+}
+
+.hero .attributes {
+	margin-bottom: 5px;
+}
+
+.hero header {
+	color: rgba(255,255,255,.94);
+}
+
+.hero hr {
 	margin: 0;
 }

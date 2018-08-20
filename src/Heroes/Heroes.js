@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 
 import Hero from './Hero'
 
-import { Item } from 'semantic-ui-react'
-import Loader from '../common/Loader'
+import { Item, Loader, Dimmer } from 'semantic-ui-react'
+
+import './Heroes.css'
 
 export default class Heroes extends Component {
 
@@ -46,22 +47,28 @@ export default class Heroes extends Component {
 
 		const {error, isLoaded, heroes} = this.state
 
+		const classItemLoader = 'item-loader'
+
 		if (error) {
 
 			console.error(error)
 
-		} else if (isLoaded) {
+		} else {
 
-			return <Item.Group relaxed>
-				{ heroes.map((hero, i) => <Hero data={hero} key={i} />) }
+			return <Item.Group relaxed style={{'position': 'relative'}}>
+
+				{isLoaded && heroes.map((hero, i) => <Hero data={hero} key={i}/>)}
+
+				{!isLoaded && <Item className={classItemLoader}>
+					<Dimmer active>
+						<Loader />
+					</Dimmer>
+				</Item>
+				}
+
 			</Item.Group>
 
-		} else if (!isLoaded) {
-
-			return <Loader />
-
 		}
-
 	}
 
 }

@@ -6,6 +6,6 @@ body {
 
 main {
 	width: 80%;
-	min-height: 80vh;
+	height: 100vh;
 	margin: 100px auto 25px auto;
 }
