@@ -5,11 +5,11 @@ nav {
 	width: 100%;
 	background: url("assets/stone-background.jpg") repeat-x center;
 	box-shadow: 0 0 5px 5px rgba(0,0,0,.64);
-	margin-bottom: 50px;
 	z-index: 99999;
 	text-align: center;
 }
 
 nav .logo {
 	margin: 5px;
+	padding: 5px;
 }
