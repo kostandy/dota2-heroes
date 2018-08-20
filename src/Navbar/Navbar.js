@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import logo from './logo-full.png'
+import logo from './assets/logo-full.png'
 
 import './Navbar.css'
 

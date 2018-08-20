@@ -17,7 +17,7 @@ export default class Roles extends Component {
 
 		const { roles } = this.state
 
-		const heroRoles = 'Hero-roles'
+		const heroRoles = 'hero-roles'
 
 		return (
 			<div className={heroRoles}>

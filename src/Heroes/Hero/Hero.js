@@ -34,7 +34,7 @@ export default class Hero extends Component {
 		const statisticData = this.getStatisticData(hero)
 
 		const classHero = 'hero'
-		const classHeroName = 'Hero-name'
+		const classHeroName = 'hero-name'
 
 		return <Item className={classHero}>
 

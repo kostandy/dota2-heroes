@@ -17,10 +17,10 @@ export default class Preview extends Component {
 
 		const { src, description } = this.state
 
-		const heroPreview = 'Hero-preview'
-		const heroName = 'Hero-name'
+		const classPreview = 'hero-preview'
+		const className = 'hero-name'
 
-		return <div className={heroPreview}>
+		return <div className={classPreview}>
 
 			<Image
 				src={src}
@@ -30,7 +30,7 @@ export default class Preview extends Component {
 				alt={description}
 			/>
 
-			<p className={heroName}>{description}</p>
+			<p className={className}>{description}</p>
 
 		</div>
 

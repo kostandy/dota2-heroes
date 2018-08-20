@@ -3,7 +3,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: url("./stone-background.jpg") repeat-x center;
+	background: url("assets/stone-background.jpg") repeat-x center;
 	box-shadow: 0 0 5px 5px rgba(0,0,0,.64);
 	margin-bottom: 50px;
 	z-index: 99999;
