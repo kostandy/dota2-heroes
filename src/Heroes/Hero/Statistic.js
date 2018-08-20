@@ -4,7 +4,7 @@ import { Statistic } from 'semantic-ui-react'
 import { Hint, LineMarkSeries, XYPlot } from 'react-vis/es/index'
 
 import 'react-vis/dist/style.css'
-import './statistic.css'
+import './Statistic.css'
 
 export default class statistic extends Component {
 

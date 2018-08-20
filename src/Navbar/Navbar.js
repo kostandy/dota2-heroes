@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import logo from './logo-full.png'
 
-import './navbar.css'
+import './Navbar.css'
 
-class Navbar extends Component {
+export default class Navbar extends Component {
 
 	render() {
 
@@ -16,5 +16,3 @@ class Navbar extends Component {
 	}
 
 }
-
-export default Navbar

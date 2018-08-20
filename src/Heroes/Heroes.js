@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-import Hero from './hero'
+import Hero from './Hero'
 
 import { Item } from 'semantic-ui-react'
-
-import './index.css'
 
 export default class Heroes extends Component {
 

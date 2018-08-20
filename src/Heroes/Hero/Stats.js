@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 import { Image, List } from 'semantic-ui-react'
 
-import agi from './attributes/agility.png'
-import str from './attributes/strength.png'
-import int from './attributes/intelligence.png'
+import agi from './Icons/agility.png'
+import str from './Icons/strength.png'
+import int from './Icons/intelligence.png'
 
-import './stats.css'
+import './Stats.css'
 
-export default class stats extends Component {
+export default class Stats extends Component {
 
 	constructor (props) {
 		super(props)

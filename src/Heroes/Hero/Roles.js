@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import { List } from 'semantic-ui-react'
 
-import './preview.css'
+import './Roles.css'
 
-export default class roles extends Component {
+export default class Roles extends Component {
 
 	constructor (props) {
 		super(props)
@@ -17,7 +17,7 @@ export default class roles extends Component {
 
 		const { roles } = this.state
 
-		const heroRoles = 'hero-roles'
+		const heroRoles = 'Hero-roles'
 
 		return (
 			<div className={heroRoles}>

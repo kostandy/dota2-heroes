@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
-import Statistic from './statistic'
-import Stats from './stats'
+import Statistic from './Statistic'
+import Stats from './Stats'
 // import Roles from './roles'
 
-import './index.css'
+import './Hero.css'
 
 import { Button, Item } from 'semantic-ui-react'
 
-export default class hero extends Component {
+export default class Hero extends Component {
 
 	constructor (props) {
 		super(props)
@@ -34,33 +34,33 @@ export default class hero extends Component {
 		const statisticData = this.getStatisticData(hero)
 
 		const classHero = 'hero'
-		const classHeroName = 'hero-name'
+		const classHeroName = 'Hero-name'
 
 		return <Item className={classHero}>
 
-				<Item.Image>
+			<Item.Image>
 
-					<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
+				<Item.Image size='small' src={`http://cdn.dota2.com${hero.img}`} />
 
-					<div className={classHeroName}>{hero.localized_name}</div>
+				<div className={classHeroName}>{hero.localized_name}</div>
 
-					<Stats data={hero} />
+				<Stats data={hero} />
 
-				</Item.Image>
+			</Item.Image>
 
-				<Item.Content>
+			<Item.Content>
 
-					<Item.Description>
+				<Item.Description>
 
-						<Statistic data={statisticData} />
+					<Statistic data={statisticData} />
 
-						<Button disabled floated='right'>More</Button>
+					<Button disabled floated='right'>More</Button>
 
-					</Item.Description>
+				</Item.Description>
 
-				</Item.Content>
+			</Item.Content>
 
-			</Item>
+		</Item>
 	}
 
 }

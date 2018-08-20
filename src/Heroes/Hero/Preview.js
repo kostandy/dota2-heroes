@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Image } from 'semantic-ui-react'
 
-import './preview.css'
+import './Preview.css'
 
 export default class Preview extends Component {
 
@@ -17,8 +17,8 @@ export default class Preview extends Component {
 
 		const { src, description } = this.state
 
-		const heroPreview = 'hero-preview'
-		const heroName = 'hero-name'
+		const heroPreview = 'Hero-preview'
+		const heroName = 'Hero-name'
 
 		return <div className={heroPreview}>
 
