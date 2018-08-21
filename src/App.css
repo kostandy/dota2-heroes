@@ -1,7 +1,13 @@
+@import "font.css";
+
+* {
+	font-family: 'Poppins', sans-serif !important;
+}
+
 body {
-	font-family: sans-serif;
 	background: fixed url("background-blurred.jpg") no-repeat;
 	background-size: cover;
+	font-weight: normal;
 }
 
 main {
