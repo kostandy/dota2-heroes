@@ -49,9 +49,9 @@ export default class Status extends Component {
 
 			return <div className={classStatus}>
 
-				{isLoaded && <Grid textAlign='center' columns={3}>
+				{isLoaded && <Grid textAlign='center'>
 
-					<Grid.Column>
+					<Grid.Column mobile={16} computer={4}>
 
 						<Statistic>
 							<Statistic.Value>{status.user_players}</Statistic.Value>
@@ -60,7 +60,7 @@ export default class Status extends Component {
 
 					</Grid.Column>
 
-					<Grid.Column>
+					<Grid.Column mobile={16} computer={4}>
 
 						<Statistic>
 							<Statistic.Value>{status.matches_last_day}</Statistic.Value>
@@ -69,7 +69,7 @@ export default class Status extends Component {
 
 					</Grid.Column>
 
-					<Grid.Column>
+					<Grid.Column mobile={16} computer={4}>
 
 						<Statistic>
 							<Statistic.Value>{status.matches_last_hour}</Statistic.Value>
