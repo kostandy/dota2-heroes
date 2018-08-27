@@ -9,7 +9,11 @@
 }
 
 .ui.items>.item.hero .ui.small.image {
+	background: #222222;
+	min-height: 75px;
+	min-width: 75px;
 	width: auto;
+	display: block;
 }
 
 .hero-image {

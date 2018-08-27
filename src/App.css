@@ -10,8 +10,6 @@ body {
 	font-weight: normal;
 }
 
-main {
-	width: 80%;
-	height: 100vh;
-	margin: 100px auto 25px auto;
+.main-container {
+	margin-top: 100px;
 }
