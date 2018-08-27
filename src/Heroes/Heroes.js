@@ -23,13 +23,16 @@ export default class Heroes extends Component {
 
 			const res = await fetch('https://api.opendota.com/api/heroStats')
 
-			const data = await res.json()
+			let data = await res.json()
+
+			// TODO: Need to remove later
+			data.pop()
 
 			this.setState({
 				isLoaded: true,
 				heroes: data.sort((a, b) => {
-					var keyA = a.localized_name,
-						keyB = b.localized_name
+					var keyA = String(a.localized_name),
+						keyB = String(b.localized_name)
 					if (keyA < keyB) return -1
 					if (keyA > keyB) return 1
 					return 0
