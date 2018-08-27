@@ -1,6 +1,15 @@
 .main-footer {
-	height: 200px;
-	background: rgba(0,0,0,.94);
+	height: 130px;
+	background: rgba(0,0,0,.64);
 	color: #fff;
 	padding: 50px 0;
+}
+
+.main-footer .container {
+	position: relative;
+}
+
+.ui.comments .comment .author,
+.ui.comments .comment .text {
+	color: #fff;
 }
