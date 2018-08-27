@@ -32,8 +32,6 @@ export default class statistic extends Component {
 
 		const { data, value } = this.state
 
-		const classHint = 'hint'
-
 		return <Statistic inverted>
 
 			<Statistic.Value>
@@ -45,7 +43,7 @@ export default class statistic extends Component {
 						onValueMouseOver={this._rememberValue}
 						onValueMouseOut={this._forgetValue}
 						data={data}/>
-					{value ? <Hint value={value} className={classHint} align={{horizontal: 'auto', vertical: 'bottom'}}>
+					{value ? <Hint value={value} align={{horizontal: 'auto', vertical: 'bottom'}}>
 						<b>{value.x + 1} Pick</b>
 						<p>{value.y} times</p>
 						<b>Winrate by position</b>
