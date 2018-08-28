@@ -8,7 +8,7 @@ import Hero from './Page/Hero'
 
 import './App.css'
 
-import { Redirect, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 export default class App extends Component {
 

@@ -60,7 +60,7 @@ export default class Stats extends Component {
 
 			<hr />
 
-			<List horizontal>
+			<List horizontal celled>
 
 				<List.Item>
 					<List.Content>

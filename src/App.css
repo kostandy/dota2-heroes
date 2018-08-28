@@ -59,6 +59,4 @@ body {
 	background: fixed url("background-blurred.jpg") no-repeat;
 	background-size: cover;
 	font-weight: normal;
-	position: relative;
-	padding-bottom: 90px;
 }

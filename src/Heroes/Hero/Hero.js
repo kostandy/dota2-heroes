@@ -6,7 +6,7 @@ import Stats from './Stats'
 
 import './Hero.css'
 
-import { Button, Item } from 'semantic-ui-react'
+import { Responsive, Button, Item } from 'semantic-ui-react'
 
 export default class Hero extends Component {
 
@@ -53,7 +53,11 @@ export default class Hero extends Component {
 
 				<Item.Description>
 
-					<Statistic data={statisticData} />
+					<Responsive minWidth={768}>
+
+						<Statistic data={statisticData} />
+
+					</Responsive>
 
 					<Button disabled floated='right'>More</Button>
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Statistic, Grid, Loader} from 'semantic-ui-react'
+import { Statistic, Loader} from 'semantic-ui-react'
 
 import './Status.css'
 
@@ -49,36 +49,17 @@ export default class Status extends Component {
 
 			return <div className={classStatus}>
 
-				{isLoaded && <Grid textAlign='center'>
+				{isLoaded && <Statistic.Group widths='3' inverted size='small'>
 
-					<Grid.Column mobile={16} computer={4}>
+						<Statistic value={status.user_players} label="User players" />
 
-						<Statistic>
-							<Statistic.Value>{status.user_players}</Statistic.Value>
-							<Statistic.Label>User players</Statistic.Label>
-						</Statistic>
+						<Statistic value={status.matches_last_day} label="Matches for the last day" />
 
-					</Grid.Column>
+						<Statistic value={status.matches_last_hour} label="Matches in the last hour" />
 
-					<Grid.Column mobile={16} computer={4}>
+					</Statistic.Group>
 
-						<Statistic>
-							<Statistic.Value>{status.matches_last_day}</Statistic.Value>
-							<Statistic.Label>Matches for the last day</Statistic.Label>
-						</Statistic>
-
-					</Grid.Column>
-
-					<Grid.Column mobile={16} computer={4}>
-
-						<Statistic>
-							<Statistic.Value>{status.matches_last_hour}</Statistic.Value>
-							<Statistic.Label>Matches in the last hour</Statistic.Label>
-						</Statistic>
-
-					</Grid.Column>
-
-				</Grid> }
+				}
 
 				{ !isLoaded && <Loader active /> }
 

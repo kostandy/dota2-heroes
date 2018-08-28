@@ -24,7 +24,7 @@
 	}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 465px){
 	.ui.statistic {
 		display: block;
 	}

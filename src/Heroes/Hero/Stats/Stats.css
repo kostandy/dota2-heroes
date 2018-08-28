@@ -12,6 +12,11 @@
 	border-radius: 50%;
 }
 
+.ui.horizontal.celled.list .list>.item,
+.ui.horizontal.celled.list>.item {
+	padding-left: 0;
+}
+
 .hero .list {
 	margin: 0;
 }
