@@ -1,31 +1,28 @@
 import React, { Component } from 'react'
 
-import { Container } from 'semantic-ui-react'
-
 import Navbar from './Navbar'
-import Status from './Status'
-import Heroes from './Heroes'
 import Footer from './Footer'
+
+import main from './Page'
+import Hero from './Page/Hero'
 
 import './App.css'
 
-class App extends Component {
+import { Redirect, Route } from 'react-router-dom'
+
+export default class App extends Component {
 
 	render () {
 
-		const classMainContainer = 'main-container'
-
-		return <div>
+		return <div style={{paddingTop: '90px'}}>
 
 			<Navbar />
 
-			<Container className={classMainContainer}>
+			<Route path='/' exact component={main} />
 
-				<Status />
+			<Route path='/hero/:name' component={Hero} />
 
-				<Heroes />
-
-			</Container>
+			{/*<Redirect to='/' />*/}
 
 			<Footer />
 
@@ -33,5 +30,3 @@ class App extends Component {
 
 	}
 }
-
-export default App

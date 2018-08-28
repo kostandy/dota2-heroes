@@ -1,96 +1,59 @@
 import React, { Component } from 'react'
 
-import { Container, Grid, Loader, Dimmer, Comment} from 'semantic-ui-react'
+import { Container, Grid, Comment} from 'semantic-ui-react'
 
 import './Footer.css'
 
 export default class Footer extends Component {
 
-	constructor (props) {
-		super(props)
-		this.state = {
-			error: null,
-			isLoaded: false,
-			author: null
-		}
-	}
-
-	async componentDidMount () {
-
-		const author = 'Kostandy'
-
-		try {
-
-			const res = await fetch(`https://api.github.com/users/${author}`)
-
-			let data = await res.json()
-
-			this.setState({
-				isLoaded: true,
-				author: data
-			})
-		} catch (error) {
-			this.setState({
-				isLoaded: true,
-				error
-			})
-		}
-	}
-
 	render () {
 
-		const {error, isLoaded, author} = this.state
+		const classMainFooter = 'footer'
 
-		const classMainFooter = 'main-footer'
+		return <footer className={classMainFooter}>
 
-		if (error) {
+			<Container>
 
-			console.error(error)
+				<Grid verticalAlign='middle' columns={2}>
 
-		} else {
+					<Grid.Column>
 
-			return <footer className={classMainFooter}>
+						<Comment.Group>
 
-				<Container>
+							<Comment>
 
-					{isLoaded && <Grid>
-							<Grid.Column floated='left' width={5}>
+								<Comment.Avatar src="https://avatars2.githubusercontent.com/u/12787555?v=4" size='small'/>
 
-								<Comment.Group>
-									<Comment>
-										<Comment.Avatar src={author.avatar_url} size='small'/>
-										<Comment.Content>
-											Created by &nbsp;
-											<Comment.Author as='a' href={`https://github.com/${author.login}`} target="_blank"
-											                title={author.login}>
-												{author.login}
-											</Comment.Author>
-											<Comment.Text>
-												Thank you for visit ;)
-											</Comment.Text>
-										</Comment.Content>
-									</Comment>
-								</Comment.Group>
+								<Comment.Content>
 
-							</Grid.Column>
+									Created by &nbsp;
 
-							<Grid.Column floated='right' align="right" width={5}>
-								Powered by <a href="https://netlify.com" target="_blank" title="Netlify">Netlify</a>
-							</Grid.Column>
+									<Comment.Author as='a' href='https://github.com/Kostandy' target="_blank" rel="noopener noreferrer"
+									                title="Kostandy">Kostandy</Comment.Author>
 
-						</Grid>
-					}
+									<Comment.Text>
+										Thank you for visit ;)
+									</Comment.Text>
 
-					{!isLoaded && <Dimmer active>
-							<Loader />
-						</Dimmer>
-					}
+								</Comment.Content>
 
-				</Container>
+							</Comment>
 
-			</footer>
+						</Comment.Group>
 
-		}
+					</Grid.Column>
+
+					<Grid.Column align="right" width={8}>
+						Powered by <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"
+						              title="Netlify">Netlify</a>
+					</Grid.Column>
+
+				</Grid>
+
+			</Container>
+
+		</footer>
+
 	}
 
 };

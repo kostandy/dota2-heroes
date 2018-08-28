@@ -1,12 +1,20 @@
-.main-footer {
-	height: 130px;
+footer.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 90px;
 	background: rgba(0,0,0,.64);
 	color: #fff;
-	padding: 50px 0;
 }
 
-.main-footer .container {
-	position: relative;
+footer.footer .ui.container,
+footer.footer .ui.grid {
+	height: 100%;
+}
+
+footer.footer .ui.grid {
+	margin: 0 -1rem;
 }
 
 .ui.comments .comment .author,

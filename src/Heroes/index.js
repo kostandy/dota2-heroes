@@ -1,3 +1,1 @@
-import Heroes from './Heroes'
-
-export default Heroes
+export { default } from './Heroes'
