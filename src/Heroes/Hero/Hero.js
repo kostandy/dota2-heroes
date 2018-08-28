@@ -53,7 +53,7 @@ export default class Hero extends Component {
 
 				<Item.Description>
 
-					<Responsive minWidth={768}>
+					<Responsive minWidth={768} style={{display: 'inline'}}>
 
 						<Statistic data={statisticData} />
 
