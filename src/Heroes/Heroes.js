@@ -25,9 +25,6 @@ export default class Heroes extends Component {
 
 			let data = await res.json()
 
-			// TODO: Need to remove later
-			data.pop()
-
 			this.setState({
 				isLoaded: true,
 				heroes: data.sort((a, b) => {
