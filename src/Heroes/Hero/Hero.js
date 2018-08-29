@@ -7,6 +7,7 @@ import Stats from './Stats'
 import './Hero.css'
 
 import { Responsive, Button, Item } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 export default class Hero extends Component {
 
@@ -41,7 +42,7 @@ export default class Hero extends Component {
 
 			<Item.Image>
 
-				<Item.Image className={classHeroImage} size='small' src={`http://cdn.dota2.com${hero.img}`} />
+				<Item.Image className={classHeroImage} size='small' src={`https://cdn.steamstatic.com${hero.img}`} />
 
 				<div className={classHeroName}>{hero.localized_name}</div>
 
@@ -59,7 +60,7 @@ export default class Hero extends Component {
 
 					</Responsive>
 
-					<Button disabled floated='right'>More</Button>
+					<Link as="Button" to={`/${hero.localized_name.toLowerCase()}`} floated='right'>More</Link>
 
 				</Item.Description>
 
