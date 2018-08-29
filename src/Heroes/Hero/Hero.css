@@ -23,8 +23,7 @@
 .hero-name {
 	background-color: rgba(0,0,0,.64);
 	position: relative;
-	top: -19px;
-	font-size: 14pt;
+	top: -16px;
 	color: #fff;
 	text-align: center;
 }
