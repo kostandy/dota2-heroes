@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import { Container } from 'semantic-ui-react'
 
-import Status from '../Status'
+import Status from '../components/status/index'
 
-import Heroes from '../Heroes'
+import Heroes from '../components/heroes/index'
 
 export default class main extends Component {
 

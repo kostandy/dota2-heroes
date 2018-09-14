@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import { Image, List } from 'semantic-ui-react'
 
-import agi from './assets/agility.png'
-import str from './assets/strength.png'
-import int from './assets/intelligence.png'
+import agi from '../../assets/images/agilities/agility.png'
+import str from '../../assets/images/agilities/strength.png'
+import int from '../../assets/images/agilities/intelligence.png'
 
 import './Stats.css'
 

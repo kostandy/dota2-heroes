@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import Statistic from './Statistic'
-import Stats from './Stats'
-// import Roles from './roles'
+import Statistic from '../statistic/index'
+import Stats from '../stats/index'
+// import roles from './roles'
 
 import './Hero.css'
 

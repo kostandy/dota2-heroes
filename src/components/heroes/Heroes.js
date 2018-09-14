@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Hero from './Hero'
+import Hero from '../hero/index'
 
 import { Item, Loader, Dimmer } from 'semantic-ui-react'
 

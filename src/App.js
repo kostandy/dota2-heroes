@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from './components/navbar'
+import Footer from './components/footer'
 
-import main from './Page'
-import Hero from './Page/Hero'
+import main from './layouts/Main'
+import Hero from './layouts/Hero'
 
 import './App.css'
 
@@ -20,7 +20,7 @@ export default class App extends Component {
 
 			<Route path='/' exact component={main} />
 
-			<Route path='/hero/:id' component={Hero} />
+			<Route path='/hero/:name' component={Hero} />
 
 			{/*<Redirect to='/' />*/}
 

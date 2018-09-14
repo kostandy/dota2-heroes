@@ -1,15 +1,15 @@
-nav {
+.nav {
 	overflow: hidden;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #4c5154 url("assets/stone-background.jpg") center;
+	background: #4c5154 url("../../assets/images/backgrounds/stone-background.jpg") center;
 	box-shadow: 0 0 15px 5px rgba(0,0,0,.44);
 	z-index: 99999;
 	text-align: center;
 }
 
-nav .logo {
+.logo {
 	margin: 5px;
 	padding: 5px;
 }
