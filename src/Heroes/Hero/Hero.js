@@ -7,7 +7,7 @@ import Stats from './Stats'
 import './Hero.css'
 
 import { Responsive, Button, Item } from 'semantic-ui-react'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 export default class Hero extends Component {
 
@@ -60,7 +60,11 @@ export default class Hero extends Component {
 
 					</Responsive>
 
-					<Link as="Button" to={`/${hero.localized_name.toLowerCase()}`} floated='right'>More</Link>
+					<Link to={`/hero/${hero.id}`}>
+						<Button inverted basic floated='right' size='mini'>
+							More
+						</Button>
+					</Link>
 
 				</Item.Description>
 

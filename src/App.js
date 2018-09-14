@@ -20,7 +20,7 @@ export default class App extends Component {
 
 			<Route path='/' exact component={main} />
 
-			<Route path='/hero/:name' component={Hero} />
+			<Route path='/hero/:id' component={Hero} />
 
 			{/*<Redirect to='/' />*/}
 

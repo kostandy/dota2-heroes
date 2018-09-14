@@ -7,18 +7,18 @@ export default class hero extends Component {
 	constructor(params) {
 		super(params)
 		this.state = {
-			name: params.match.params.name
+			id: params.match.params.id
 		}
 	}
 
 	render () {
 
-		const { name } = this.state
+		const { id } = this.state
 
 		const classMainContainer = 'main-container'
 
 		return <Container className={classMainContainer}>
-			<h1>{ name }</h1>
+			<h1>{ id }</h1>
 		</Container>
 	}
 
