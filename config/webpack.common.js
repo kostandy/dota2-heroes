@@ -21,7 +21,7 @@ module.exports = {
         exclude: /(node_modules)/,
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
@@ -41,7 +41,7 @@ module.exports = {
             },
           },
         ],
-      },
+      }
     ],
   },
   serve: {
@@ -53,12 +53,13 @@ module.exports = {
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['*', '.js', '.jsx', '.css', '.styl'],
+    extensions: ['*', '.html', '.js', '.jsx', '.css', '.styl'],
   },
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
+	    favicon: commonPaths.favicon
     }),
   ],
 };

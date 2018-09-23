@@ -6,11 +6,17 @@
 	left 0
 	width 100%
 	background #4c5154 url('../../static/backgrounds/stone-background.jpg') center
-	box-shadow 0 0 15px 5px rgba(0,0,0,.44)
+	box-shadow 0 0 15px 5px rgba(0, 0, 0, .44)
 	z-index 99999
 	text-align center
 
 .logo
 	margin 5px
 	padding 5px
+	animation idle 1s infinite alternate
 
+	@keyframes idle
+		from
+			filter drop-shadow(0 0 15px rgba(0,0,0,.14))
+		to
+			filter drop-shadow(0 0 5px rgba(0,0,0,.94))
