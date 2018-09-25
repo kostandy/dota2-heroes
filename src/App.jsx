@@ -6,11 +6,9 @@ import { hot } from 'react-hot-loader';
 import Navbar from './components/navbar';
 import Home from './layouts/Home';
 
-import style from './App.styl';
-
 const App = () => (
   <Router>
-    <div className={style['padding-top']}>
+    <div>
       <Navbar />
 
       <Switch>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Col, Row } from 'antd';
+import { Col, Row, Skeleton } from 'antd';
 import fetchServerStatistics from '../../actions';
 
 import style from './ServerStatistics.styl';
@@ -18,36 +18,55 @@ class ServerStatistics extends React.Component {
     if (error) {
       return (
         <div>
-          Error!
-          <pre>{error.message}</pre>
+          Error:
+          &nbsp;
+          {error.message}
         </div>
       );
     }
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
+    const userPlayers = (
+      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+        <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
+          <h2>{statistic && statistic.user_players}</h2>
+          <h3>User players</h3>
+        </Skeleton>
+      </Col>
+    );
 
-    if (statistic) {
-      return (
-        <Row type="flex" justify="center" align="middle" style={{ textAlign: 'center' }}>
-          <Col className={style.element} span={8}>
-            <h2>{statistic.user_players}</h2>
-            <h3>User players</h3>
-          </Col>
-          <Col className={style.element} span={8}>
-            <h2>{statistic.matches_last_day}</h2>
-            <h3>Matches for the last day</h3>
-          </Col>
-          <Col className={style.element} span={8}>
-            <h2>{statistic.matches_last_hour}</h2>
-            <h3>Matches in the last hour</h3>
-          </Col>
-        </Row>
-      );
-    }
+    const matchesLastDay = (
+      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+        <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
+          <h2>{statistic && statistic.matches_last_day}</h2>
+          <h3>Matches for the last day</h3>
+        </Skeleton>
+      </Col>
+    );
 
-    return null;
+    const matchesLastHour = (
+      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+        <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
+          <h2>{statistic && statistic.matches_last_hour}</h2>
+          <h3>Matches for the last hour</h3>
+        </Skeleton>
+      </Col>
+    );
+
+    return (
+      <Row
+        type="flex"
+        justify="center"
+        align="stretch"
+        style={{ textAlign: 'center' }}>
+
+        {userPlayers}
+
+        {matchesLastDay}
+
+        {matchesLastHour}
+
+      </Row>
+    );
   }
 }
 
@@ -60,8 +79,8 @@ ServerStatistics.propTypes = {
 
 const mapStateToProps = state => ({
   statistic: state.statistic,
-  loading: state.statistic.loading,
-  error: state.statistic.error,
+  loading: state.loading,
+  error: state.error,
 });
 
 export default connect(mapStateToProps)(ServerStatistics);
