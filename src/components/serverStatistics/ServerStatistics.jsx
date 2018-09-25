@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'antd';
 import fetchServerStatistics from '../../actions';
 
+import style from './ServerStatistics.styl';
+
 class ServerStatistics extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props;
@@ -26,19 +28,26 @@ class ServerStatistics extends React.Component {
       return <div>Loading...</div>;
     }
 
-    return (
-      <Row type="flex" justify="center" align="top">
-        <Col span={8}>
-          <h1>{statistic && statistic.user_players}</h1>
-        </Col>
-        <Col span={8}>
-          <h1>{statistic && statistic.matches_last_day}</h1>
-        </Col>
-        <Col span={8}>
-          <h1>{statistic && statistic.matches_last_hour}</h1>
-        </Col>
-      </Row>
-    );
+    if (statistic) {
+      return (
+        <Row type="flex" justify="center" align="middle" style={{ textAlign: 'center' }}>
+          <Col className={style.element} span={8}>
+            <h2>{statistic.user_players}</h2>
+            <h3>User players</h3>
+          </Col>
+          <Col className={style.element} span={8}>
+            <h2>{statistic.matches_last_day}</h2>
+            <h3>Matches for the last day</h3>
+          </Col>
+          <Col className={style.element} span={8}>
+            <h2>{statistic.matches_last_hour}</h2>
+            <h3>Matches in the last hour</h3>
+          </Col>
+        </Row>
+      );
+    }
+
+    return null;
   }
 }
 
