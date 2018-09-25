@@ -1,3 +1,4 @@
+const path = require('path');
 const commonPaths = require('./paths');
 
 module.exports = {
@@ -10,8 +11,28 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css/,
+        exclude: path.resolve(__dirname, '../src'),
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              url: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        exclude: path.resolve(__dirname, '../src'),
+        loader: 'url-loader?limit=100000',
+      },
+      {
         test: /\.styl/,
-        exclude: /node_modules/,
         use: [
           {
             loader: 'style-loader',

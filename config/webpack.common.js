@@ -18,7 +18,6 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: /(node_modules)/,
       },
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
@@ -41,7 +40,7 @@ module.exports = {
             },
           },
         ],
-      }
+      },
     ],
   },
   serve: {
@@ -59,7 +58,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
-	    favicon: commonPaths.favicon
+      favicon: commonPaths.favicon,
     }),
   ],
 };
