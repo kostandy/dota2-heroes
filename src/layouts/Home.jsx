@@ -1,21 +1,34 @@
 import React from 'react';
 import { Layout } from 'antd';
+
 import ServerStatistics from '../components/serverStatistics';
+import FilterPanel from '../components/filterPanel';
 
-import style from '../App.styl';
+import '../App.styl';
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const Home = () => (
-  <Layout className={style['ant-layout']}>
+  <Layout>
 
-    <Header className={style['ant-layout-header']}>
+    <Header>
       <ServerStatistics />
     </Header>
 
     <Content>
-      Hello
+
+      <FilterPanel />
+      {/* TODO: Insert filter panel */}
+
+      {/* TODO: Insert heros displaying (with two variations: grid & row) */}
+
     </Content>
+
+    <Footer>
+
+      {/* TODO: Add footer component */}
+
+    </Footer>
 
   </Layout>
 );

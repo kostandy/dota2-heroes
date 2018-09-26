@@ -1,6 +1,13 @@
 @import "theme/fonts.styl"
 @import "theme/mixins.styl"
 
+html, body
+	min-width 996px
+	font-family 'Poppins', sans-serif !important
+
+html
+	height 100%
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,6 +38,7 @@ body
 	background fixed url('static/backgrounds/background-blurred.jpg') no-repeat
 	background-size cover
 	font-weight normal
+	padding-top 100px
 
 ol, ul
 	list-style none
@@ -47,22 +55,17 @@ table
 	border-collapse collapse
 	border-spacing 0
 
-*
-	font-family 'Poppins', sans-serif !important
-
-html, body
-	min-width 996px
-
-html
-	height 100%
-
-body
-	padding-top 100px
-
-.ant-layout
+:global(.ant-layout)
 	background transparent
 
-.ant-layout-header
-	background transparent
-	height auto
-	line-height normal
+	&-header
+		background transparent
+		height auto
+		line-height normal
+
+	&-content
+		padding 25px 50px
+
+	&-footer
+		background transparent
+		padding 0 50px

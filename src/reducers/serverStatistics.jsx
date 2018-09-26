@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   statistic: {},
-  loading: false,
+  loading: true,
   error: null,
 };
 
