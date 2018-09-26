@@ -49,7 +49,7 @@ module.exports = {
             },
           },
           {
-            loader: 'stylus-loader',
+            loader: 'theme-loader',
           },
         ],
       },

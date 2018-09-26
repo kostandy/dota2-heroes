@@ -1,4 +1,5 @@
-@import "fonts.styl"
+@import "theme/fonts.styl"
+@import "theme/mixins.styl"
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -49,6 +50,9 @@ table
 *
 	font-family 'Poppins', sans-serif !important
 
+html, body
+	min-width 996px
+
 html
 	height 100%
 
@@ -60,3 +64,5 @@ body
 
 .ant-layout-header
 	background transparent
+	height auto
+	line-height normal

@@ -26,7 +26,7 @@ class ServerStatistics extends React.Component {
     }
 
     const userPlayers = (
-      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+      <Col className={style.element} span={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.user_players}</h2>
           <h3>User players</h3>
@@ -35,7 +35,7 @@ class ServerStatistics extends React.Component {
     );
 
     const matchesLastDay = (
-      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+      <Col className={style.element} span={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.matches_last_day}</h2>
           <h3>Matches for the last day</h3>
@@ -44,7 +44,7 @@ class ServerStatistics extends React.Component {
     );
 
     const matchesLastHour = (
-      <Col className={style.element} sm={24} md={8} style={{ padding: loading ? '28px' : 0 }}>
+      <Col className={style.element} span={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.matches_last_hour}</h2>
           <h3>Matches for the last hour</h3>
