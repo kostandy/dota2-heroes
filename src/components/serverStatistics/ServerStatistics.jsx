@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Col, Row, Skeleton } from 'antd';
-import fetchServerStatistics from '../../actions';
+import fetchServerStatistics from '../../actions/serverStatistics';
 
 import style from './ServerStatistics.styl';
 
-class ServerStatistics extends React.Component {
+class ServerStatistics extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchServerStatistics());
@@ -77,10 +77,10 @@ ServerStatistics.propTypes = {
   statistic: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-  statistic: state.statistic,
-  loading: state.loading,
-  error: state.error,
+const mapStateToProps = ({ serverStatisticReducer }) => ({
+  statistic: serverStatisticReducer.statistic,
+  loading: serverStatisticReducer.loading,
+  error: serverStatisticReducer.error,
 });
 
 export default connect(mapStateToProps)(ServerStatistics);

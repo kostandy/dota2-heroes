@@ -1,11 +1,41 @@
 .row
 	background rgba(0,0,0,.84)
-	box-shadow 0 10px 50px 5px rgba(0,0,0,.64)
+	box-shadow 0 0 50px 5px rgba(0,0,0,.64)
 	padding 18px
 	color #fff
+
+.ant-select
+	:global(.ant-select-selection)
+		border-radius 0
+		background transparent
+
+:global(.ant-select-dropdown)
+	background #000
+	box-shadow 0 10px 50px 10px rgba(255,255,255,.14)
+	:global(.ant-select-dropdown-menu-item)
+		border-radius 0
+		color #fff
+		&:hover
+			color #000
+	:global(.ant-select-dropdown-menu-item-selected),
+	:global(.ant-select-dropdown-menu-item-active)
+		color #000
 
 .switch
 	margin-left 10px
 
 	&:not(:global(.ant-switch-checked))
 		background-color #1890ff87
+
+	:global(.ant-switch-inner)
+		font-size 16px
+
+.avatar
+	vertical-align middle
+
+.label
+	display inline-block
+	vertical-align middle
+	height 18px
+	line-height 18px
+	margin-left 5px
