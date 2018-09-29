@@ -45,8 +45,8 @@ class FilterPanel extends Component {
               className={style.avatar}
               src={icons[index]}
               alt={hero.localized_name}
-              width={18}
-              height={18} />
+              width={16}
+              height={16} />
             <p className={style.label}>{hero.localized_name}</p>
           </Option>
         ))}
@@ -72,7 +72,7 @@ class FilterPanel extends Component {
         align="middle"
         className={style.row}>
 
-        <Col span={15}>
+        <Col span={12}>
           {heroSelect()}
         </Col>
 
