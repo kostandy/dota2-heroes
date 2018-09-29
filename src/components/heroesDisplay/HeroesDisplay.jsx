@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { List, Avatar } from 'antd';
+import { List } from 'antd';
 import fetchHeroesStats from '../../actions/heroesStats';
 
 import style from './HeroesDisplay.styl';
@@ -13,7 +13,9 @@ class HeroesDisplay extends Component {
   }
 
   render() {
-    const { error, loading, heroes } = this.props;
+    const {
+      error, loading, heroes, filteredHeroes,
+    } = this.props;
 
     if (error) {
       return (
@@ -34,7 +36,7 @@ class HeroesDisplay extends Component {
         itemLayout="vertical"
         loading={loading}
         size="small"
-        dataSource={heroes}
+        dataSource={(filteredHeroes.length && filteredHeroes) || heroes}
         renderItem={item => (
           <List.Item
             className={style['ant-list-item']}
@@ -55,13 +57,15 @@ class HeroesDisplay extends Component {
 
 HeroesDisplay.propTypes = {
   dispatch: PropTypes.func,
-  heroes: PropTypes.array,
   error: PropTypes.object,
   loading: PropTypes.bool,
+  heroes: PropTypes.array,
+  filteredHeroes: PropTypes.array,
 };
 
 
-const mapStateToProps = ({ heroesStatsReducer }) => ({
+const mapStateToProps = ({ heroesStatsReducer, filtersReducer }) => ({
+  filteredHeroes: filtersReducer.filteredHeroes,
   heroes: heroesStatsReducer.heroes,
   loading: heroesStatsReducer.loading,
   error: heroesStatsReducer.error,

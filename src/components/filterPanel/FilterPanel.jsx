@@ -1,9 +1,11 @@
+/* eslint-disable global-require,import/no-dynamic-require */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   Col, Row, Switch, Select,
 } from 'antd';
 import PropTypes from 'prop-types';
+import { filterByHeroNames } from '../../actions/filters';
 
 import style from './FilterPanel.styl';
 
@@ -11,14 +13,15 @@ const { Option } = Select;
 
 class FilterPanel extends Component {
   render() {
-    const { error, loading, heroes } = this.props;
+    const {
+      dispatch, error, loading, heroes,
+    } = this.props;
 
     const icons = heroes && heroes
-    // eslint-disable-next-line global-require,import/no-dynamic-require
       .map(hero => require(`../../static/icons/${hero.localized_name}.png`));
 
-    const onChangeHeroes = (value) => {
-      console.log(`selected hero: ${value}`);
+    const onChangeHeroes = (names) => {
+      dispatch(filterByHeroNames(heroes, names));
     };
 
     const onChangeView = checked => checked;
@@ -63,28 +66,27 @@ class FilterPanel extends Component {
     );
 
     return (
-      <div>
-        <Row
-          type="flex"
-          justify="space-between"
-          align="middle"
-          className={style.row}>
+      <Row
+        type="flex"
+        justify="space-between"
+        align="middle"
+        className={style.row}>
 
-          <Col span={15}>
-            {heroSelect()}
-          </Col>
+        <Col span={15}>
+          {heroSelect()}
+        </Col>
 
-          <Col span={5} style={{ textAlign: 'center' }}>
-            {changeView()}
-          </Col>
+        <Col span={5} style={{ textAlign: 'center' }}>
+          {changeView()}
+        </Col>
 
-        </Row>
-      </div>
+      </Row>
     );
   }
 }
 
 FilterPanel.propTypes = {
+  dispatch: PropTypes.func,
   heroes: PropTypes.array,
   error: PropTypes.object,
   loading: PropTypes.bool,
