@@ -1,8 +1,9 @@
+/* eslint-disable global-require,import/no-dynamic-require */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  Alert, List, Row, Col, Card,
+  Alert, List, Row, Col, Card, Tooltip,
 } from 'antd';
 import fetchHeroesStats from '../../actions/heroesStats';
 
@@ -22,20 +23,32 @@ class HeroesDisplay extends Component {
     if (error) {
       return (
         <Alert
-          message={`Error: ${error.message}`}
+          message="Error"
+          description={error.message}
+          showIcon
           type="error"
           closable />
       );
     }
 
-    const extraImage = (url, name) => (
+    const extraImages = heroes && heroes
+      .map(hero => require(`../../static/extra/${hero.localized_name}.png`));
+
+    // eslint-disable-next-line no-nested-ternary
+    const getFullAttrName = attr => (attr === 'str' ? 'strength'
+      : attr === 'agi' ? 'agility' : 'intelligence');
+
+    const extraImage = ({ localized_name: name, primary_attr: attr }, index) => (
       <figure className={style['extra-figure']}>
-        <img width={256} height={114} alt={name} src={`https://cdn.steamstatic.com${url}`} />
+        <img width={256} height={114} alt={name} src={extraImages[index]} />
+        <Tooltip placement="leftTop" title={`Primary: ${getFullAttrName(attr)}`}>
+          <span className={['attr', attr, 'primary-attr'].join(' ')} />
+        </Tooltip>
         <figcaption>{name}</figcaption>
       </figure>
     );
 
-    const listItem = (item) => {
+    const listItem = (item, index) => {
       if (currentView === 'row') {
         return (
           <List.Item
@@ -43,10 +56,40 @@ class HeroesDisplay extends Component {
             key={item.id}>
             <Row gutter={18}>
               <Col xs={24} md={6}>
-                {extraImage(item.img, item.localized_name)}
+                {extraImage(item, index)}
               </Col>
-              <Col xs={{ span: 0 }} md={18}>
-                <p>Content</p>
+              <Col xs={{ span: 0 }} md={4}>
+                <p>{item.attack_type}</p>
+                <div>
+                  <span className={['attr', 'str', item.primary_attr === 'str' ? 'primary-attr' : null].join(' ')} />
+                  &nbsp;
+                  {item.base_str}
+                  &nbsp;
+                  <small>
+                    +
+                    {item.str_gain}
+                  </small>
+                </div>
+                <div>
+                  <span className={['attr', 'agi', item.primary_attr === 'agi' ? 'primary-attr' : null].join(' ')} />
+                  &nbsp;
+                  {item.base_agi}
+                  &nbsp;
+                  <small>
+                    +
+                    {item.agi_gain}
+                  </small>
+                </div>
+                <div>
+                  <span className={['attr', 'int', item.primary_attr === 'int' ? 'primary-attr' : null].join(' ')} />
+                  &nbsp;
+                  {item.base_agi}
+                  &nbsp;
+                  <small>
+                    +
+                    {item.agi_gain}
+                  </small>
+                </div>
               </Col>
             </Row>
           </List.Item>
@@ -56,8 +99,8 @@ class HeroesDisplay extends Component {
         <List.Item
           className={style['ant-list-item']}
           key={item.id}>
-          <Card title={extraImage(item.img, item.localized_name)} bordered={false}>
-              Content
+          <Card title={extraImage(item, index)} bordered={false}>
+            {item.attack_type}
           </Card>
         </List.Item>
       );
@@ -76,7 +119,7 @@ class HeroesDisplay extends Component {
         loading={loading}
         size="small"
         dataSource={heroes}
-        renderItem={item => listItem(item)} />
+        renderItem={(item, index) => listItem(item, index)} />
     );
   }
 }

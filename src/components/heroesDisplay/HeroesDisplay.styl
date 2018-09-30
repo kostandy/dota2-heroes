@@ -39,6 +39,14 @@
 	position relative
 	overflow hidden
 	border 1px solid darkgray
+
+	:global(.attr)
+		position absolute
+		top 5px
+		right 5px
+		opacity .9
+		box-shadow 0 0 10px 3px rgba(0,0,0,.64)
+
 	&:hover
 		figcaption
 			opacity 1

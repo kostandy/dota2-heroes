@@ -1,4 +1,4 @@
-/* eslint-disable global-require,import/no-dynamic-require */
+/* eslint-disable global-require,import/no-dynamic-require,react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Row, Switch } from 'antd';

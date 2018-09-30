@@ -20,14 +20,16 @@ class ServerStatistics extends Component {
     if (error) {
       return (
         <Alert
-          message={`Error: ${error.message}`}
+          message="Error"
+          description={error.message}
+          showIcon
           type="error"
           closable />
       );
     }
 
     const userPlayers = (
-      <Col className={style.col} sm={24} md={8}>
+      <Col className={style.col} xs={24} sm={24} md={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.user_players}</h2>
           <h3>User players</h3>
@@ -36,7 +38,7 @@ class ServerStatistics extends Component {
     );
 
     const matchesLastDay = (
-      <Col className={style.col} sm={24} md={8}>
+      <Col className={style.col} xs={24} sm={24} md={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.matches_last_day}</h2>
           <h3>Matches for the last day</h3>
@@ -45,7 +47,7 @@ class ServerStatistics extends Component {
     );
 
     const matchesLastHour = (
-      <Col className={style.col} sm={24} md={8}>
+      <Col className={style.col} xs={24} sm={24} md={8}>
         <Skeleton loading={loading} paragraph={{ rows: 1 }} active>
           <h2>{statistic && statistic.matches_last_hour}</h2>
           <h3>Matches for the last hour</h3>
