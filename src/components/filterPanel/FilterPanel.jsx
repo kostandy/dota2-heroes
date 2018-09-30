@@ -1,57 +1,20 @@
 /* eslint-disable global-require,import/no-dynamic-require */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Col, Row, Switch, Select,
-} from 'antd';
+import { Col, Row, Switch } from 'antd';
 import PropTypes from 'prop-types';
-import { filterByHeroNames } from '../../actions/filters';
+import { changeView as changeViewAction } from '../../actions/filters';
 
 import style from './FilterPanel.styl';
 
-const { Option } = Select;
-
 class FilterPanel extends Component {
   render() {
-    const {
-      dispatch, error, loading, heroes,
-    } = this.props;
+    const { dispatch } = this.props;
 
-    const icons = heroes && heroes
-      .map(hero => require(`../../static/icons/${hero.localized_name}.png`));
+    // const icons = heroes && heroes
+    //   .map(hero => require(`../../static/icons/${hero.localized_name}.png`));
 
-    const onChangeHeroes = (names) => {
-      dispatch(filterByHeroNames(heroes, names));
-    };
-
-    const onChangeView = checked => checked;
-
-    const heroSelect = () => (
-      <Select
-        className={style['ant-select']}
-        mode="tags"
-        style={{ width: '100%' }}
-        onChange={onChangeHeroes}
-        placeholder="Pick heroes for filter"
-        tokenSeparators={[',']}>
-
-        {error && [(<Option key={0} disabled>{error.message}</Option>)]}
-
-        {loading && (<Option key={0} disabled>Loading...</Option>)}
-
-        {!error && !loading && heroes && heroes.length && heroes.map((hero, index) => (
-          <Option key={hero.localized_name}>
-            <img
-              className={style.avatar}
-              src={icons[index]}
-              alt={hero.localized_name}
-              width={16}
-              height={16} />
-            <p className={style.label}>{hero.localized_name}</p>
-          </Option>
-        ))}
-      </Select>
-    );
+    const onChangeView = view => dispatch(changeViewAction(view ? 'row' : 'grid'));
 
     const changeView = () => (
       <div>
@@ -60,8 +23,8 @@ class FilterPanel extends Component {
           className={style.switch}
           defaultChecked
           onChange={onChangeView}
-          checkedChildren="row"
-          unCheckedChildren="grid" />
+          checkedChildren="Row"
+          unCheckedChildren="Grid" />
       </div>
     );
 
@@ -72,12 +35,12 @@ class FilterPanel extends Component {
         align="middle"
         className={style.row}>
 
-        <Col span={12}>
-          {heroSelect()}
+        <Col xs={{ span: 0 }} md={24}>
+          {changeView()}
         </Col>
 
-        <Col span={5} style={{ textAlign: 'center' }}>
-          {changeView()}
+        <Col xs={24} md={{ span: 0 }}>
+          You can change view on the largest screen
         </Col>
 
       </Row>
@@ -87,9 +50,6 @@ class FilterPanel extends Component {
 
 FilterPanel.propTypes = {
   dispatch: PropTypes.func,
-  heroes: PropTypes.array,
-  error: PropTypes.object,
-  loading: PropTypes.bool,
 };
 
 

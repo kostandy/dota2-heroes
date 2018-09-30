@@ -2,7 +2,6 @@
 @import "theme/mixins.styl"
 
 html, body
-	min-width 996px
 	font-family 'Poppins', sans-serif !important
 
 html
@@ -38,7 +37,7 @@ body
 	background fixed url('static/backgrounds/background-blurred.jpg') no-repeat
 	background-size cover
 	font-weight normal
-	padding-top 100px
+	padding-top 90px
 
 ol, ul
 	list-style none
@@ -63,8 +62,14 @@ table
 		height auto
 		line-height normal
 
+		@media screen and (max-width 576px)
+			padding 0 10px
+
 	&-content
-		padding 25px 50px
+		@media screen and (max-width 576px)
+			padding 15px 10px
+		@media screen and (min-width 576px)
+			padding 15px 50px
 
 	&-footer
 		background transparent

@@ -1,6 +1,6 @@
 import {
   SET_FILTERED_HEROES,
-  CHANGE_VIEW,
+  SET_CURRENT_VIEW,
 } from '../actions/filters';
 
 const initialState = {
@@ -16,8 +16,11 @@ export default function filtersReducer(state = initialState, action) {
       filteredHeroes: action.payload.filteredHeroes,
     };
 
-  case CHANGE_VIEW:
-    return { ...state };
+  case SET_CURRENT_VIEW:
+    return {
+      ...state,
+      currentView: action.payload.currentView,
+    };
 
   default:
     return state;
